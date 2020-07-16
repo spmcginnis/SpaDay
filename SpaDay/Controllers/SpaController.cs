@@ -10,6 +10,7 @@ namespace SpaDay.Controllers
 {
     public class SpaController : Controller
     {
+
         public bool CheckSkinType(string skinType, string facialType)
         {
 
@@ -35,6 +36,7 @@ namespace SpaDay.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -55,6 +57,11 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+
+            ViewBag.name = name;
+            ViewBag.skintype = skintype;
+            ViewBag.aptFacials = appropriateFacials;
+            ViewBag.manipedi = manipedi;
             return View();
         }
 
